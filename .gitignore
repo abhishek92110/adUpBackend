@@ -1,0 +1,8 @@
+# Remove the sensitive file from Git's tracking
+git rm --cached config/serviceAccount.json
+
+# Add the file to .gitignore so it isn't accidentally added again
+echo "config/serviceAccount.json" >> .gitignore
+
+# Commit the changes
+git commit -m "Removed service account file from tracking"
