@@ -34,7 +34,7 @@ const loginUser = async (req, res) => {
 // signUp user
 
 const signupUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, location } = req.body;
 
   try {
     // Check if user already exists
@@ -47,6 +47,7 @@ const signupUser = async (req, res) => {
     const user = new User({
       email,
       password,
+      location
     });
 
     // Save user to database
@@ -58,7 +59,8 @@ const signupUser = async (req, res) => {
     });
 
     res.status(201).json({ token });
-  } catch (err) {
+  }
+   catch (err) {
     console.error(err);
     res.status(500).send('Server Error');
   }
