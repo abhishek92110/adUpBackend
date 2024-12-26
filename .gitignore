@@ -1,2 +1,3 @@
 # Ignore the serviceAccount.json file in the config folder
 config/serviceAccount.json
+node_modules

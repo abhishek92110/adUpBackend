@@ -71,6 +71,7 @@ const signupUser = async (req, res) => {
 
 const googleLogin = async (req, res) => {
   console.log("google token")
+
   const { idToken } = req.body;  // ID Token sent from frontend
 
   try {
@@ -101,5 +102,6 @@ const googleLogin = async (req, res) => {
     res.status(500).send('Server Error');
   }
 };
+
 
 module.exports = { loginUser, signupUser, googleLogin  };
