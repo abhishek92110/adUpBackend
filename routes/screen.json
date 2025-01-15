@@ -1,0 +1,132 @@
+[
+    {
+      "screenNumber": 1,
+      "location": {
+        "status": "active",
+        "locationType": "indoor",
+        "networkType": "WiFi",
+        "city": "noida"
+      },
+      "coordinate": {
+        "type": "Point", 
+        "coordinates": [77.3102, 28.5828] 
+      }
+    },
+    {
+      "screenNumber": 2,
+      "location": {
+        "status": "active",
+        "locationType": "outdoor",
+        "networkType": "4G",
+        "city": "noida"
+      },
+      "coordinate": {
+        "type": "Point", 
+        "coordinates": [77.3295, 28.5982] 
+      }
+    },
+    {
+      "screenNumber": 3,
+      "location": {
+        "status": "inactive",
+        "locationType": "indoor",
+        "networkType": "WiFi",
+        "city": "noida"
+      },
+      "coordinate": {
+        "type": "Point", 
+        "coordinates": [77.2928, 28.5735] 
+      }
+    },
+    {
+      "screenNumber": 4,
+      "location": {
+        "status": "active",
+        "locationType": "outdoor",
+        "networkType": "5G",
+        "city": "noida"
+      },
+      "coordinate": {
+        "type": "Point", 
+        "coordinates": [77.3029, 28.5631] 
+      }
+    },
+    {
+      "screenNumber": 5,
+      "location": {
+        "status": "active",
+        "locationType": "indoor",
+        "networkType": "WiFi",
+        "city": "noida"
+      },
+      "coordinate": {
+        "type": "Point", 
+        "coordinates": [77.3100, 28.6071] 
+      }
+    },
+    {
+      "screenNumber": 6,
+      "location": {
+        "status": "inactive",
+        "locationType": "outdoor",
+        "networkType": "WiFi",
+        "city": "noida"
+      },
+      "coordinate": {
+        "type": "Point", 
+        "coordinates": [77.2912, 28.6135] 
+      }
+    },
+    {
+      "screenNumber": 7,
+      "location": {
+        "status": "active",
+        "locationType": "outdoor",
+        "networkType": "4G",
+        "city": "noida"
+      },
+      "coordinate": {
+        "type": "Point", 
+        "coordinates": [77.3244, 28.5809] 
+      }
+    },
+    {
+      "screenNumber": 8,
+      "location": {
+        "status": "active",
+        "locationType": "indoor",
+        "networkType": "WiFi",
+        "city": "noida"
+      },
+      "coordinate": {
+        "type": "Point", 
+        "coordinates": [77.3109, 28.6002] 
+      }
+    },
+    {
+      "screenNumber": 9,
+      "location": {
+        "status": "inactive",
+        "locationType": "outdoor",
+        "networkType": "4G",
+        "city": "noida"
+      },
+      "coordinate": {
+        "type": "Point", 
+        "coordinates": [77.3333, 28.5703] 
+      }
+    },
+    {
+      "screenNumber": 10,
+      "location": {
+        "status": "active",
+        "locationType": "indoor",
+        "networkType": "5G",
+        "city": "noida"
+      },
+      "coordinate": {
+        "type": "Point", 
+        "coordinates": [77.3057, 28.5934]  
+      }
+    }
+]
