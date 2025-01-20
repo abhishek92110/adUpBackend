@@ -66,26 +66,54 @@ const signupUser = async (req, res) => {
   }
 };
 
-
 // google login
+
+// const googleLogin = async (req, res) => {
+//   console.log("google token")
+
+//   const { idToken } = req.body;  // ID Token sent from frontend
+
+//   try {
+//     // Verify the Firebase ID token
+//     const decodedToken = await admin.auth().verifyIdToken(idToken);
+//     console.log("decode  =",decodedToken)
+
+//     // Check if the user already exists in the database
+//     let user = await User.findOne({ email: decodedToken.email });
+//     if (!user) {
+//       // If the user does not exist, create a new user
+//       user = new User({
+//         email: decodedToken.email,
+//         name: decodedToken.name || decodedToken.email,  // Name or email as fallback
+//       });
+//       await user.save();
+//     }
+
+//     // Generate JWT token for the user
+//     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+//       expiresIn: '1h',
+//     });
+
+//     // Respond with the generated JWT token
+//     res.json({ token });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send('Server Error');
+//   }
+// };
 
 const googleLogin = async (req, res) => {
   console.log("google token")
 
-  const { idToken } = req.body;  // ID Token sent from frontend
+  const { email, name } = req.body; 
 
   try {
-    // Verify the Firebase ID token
-    const decodedToken = await admin.auth().verifyIdToken(idToken);
-    console.log("decode  =",decodedToken)
-
-    // Check if the user already exists in the database
-    let user = await User.findOne({ email: decodedToken.email });
+    let user = await User.findOne({ email: email });
     if (!user) {
       // If the user does not exist, create a new user
       user = new User({
-        email: decodedToken.email,
-        name: decodedToken.name || decodedToken.email,  // Name or email as fallback
+        email: email,
+        name: name 
       });
       await user.save();
     }
@@ -95,7 +123,6 @@ const googleLogin = async (req, res) => {
       expiresIn: '1h',
     });
 
-    // Respond with the generated JWT token
     res.json({ token });
   } catch (err) {
     console.error(err);

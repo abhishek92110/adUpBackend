@@ -1,0 +1,123 @@
+[
+    {
+      "name": "John Doe",
+      "age": 15,
+      "marks": 15,
+      "class": "10A"
+    },
+    {
+      "name": "Jane Smith",
+      "age": 16,
+      "marks": 92,
+      "class": "11B"
+    },
+    {
+      "name": "Samuel Johnson",
+      "age": 14,
+      "marks": 78,
+      "class": "9C"
+    },
+    {
+      "name": "Emily Davis",
+      "age": 15,
+      "marks": 48,
+      "class": "10A"
+    },
+    {
+      "name": "Michael Brown",
+      "age": 17,
+      "marks": 95,
+      "class": "12A"
+    },
+    {
+      "name": "Sophia Wilson",
+      "age": 16,
+      "marks": 89,
+      "class": "11B"
+    },
+    {
+      "name": "Daniel Martinez",
+      "age": 14,
+      "marks": 34,
+      "class": "9C"
+    },
+    {
+      "name": "Olivia Garcia",
+      "age": 15,
+      "marks": 82,
+      "class": "10A"
+    },
+    {
+      "name": "James Rodriguez",
+      "age": 16,
+      "marks": 10,
+      "class": "11B"
+    },
+    {
+      "name": "Isabella Lee",
+      "age": 14,
+      "marks": 76,
+      "class": "9C"
+    },
+    {
+      "name": "Benjamin Walker",
+      "age": 17,
+      "marks": 94,
+      "class": "12A"
+    },
+    {
+      "name": "Charlotte Harris",
+      "age": 16,
+      "marks": 85,
+      "class": "11B"
+    },
+    {
+      "name": "Alexander Young",
+      "age": 15,
+      "marks": 80,
+      "class": "10A"
+    },
+    {
+      "name": "Ava Hall",
+      "age": 14,
+      "marks": 77,
+      "class": "9C"
+    },
+    {
+      "name": "William Allen",
+      "age": 17,
+      "marks": 97,
+      "class": "12A"
+    },
+    {
+      "name": "Mia Scott",
+      "age": 16,
+      "marks": 87,
+      "class": "11B"
+    },
+    {
+      "name": "Ethan Adams",
+      "age": 15,
+      "marks": 83,
+      "class": "10A"
+    },
+    {
+      "name": "Harper Baker",
+      "age": 14,
+      "marks": 79,
+      "class": "9C"
+    },
+    {
+      "name": "Liam Gonzalez",
+      "age": 17,
+      "marks": 96,
+      "class": "12A"
+    },
+    {
+      "name": "Amelia Clark",
+      "age": 16,
+      "marks": 11,
+      "class": "11B"
+    }
+  ]
+  
