@@ -7,6 +7,6 @@ router.post('/login', loginUser);
 router.post('/signup', signupUser);
 router.post('/google', googleLogin);
 router.get('/getScreen',getScreen)
-router.get('/addlocation',updateUserLocation)
+router.put('/addlocation',updateUserLocation)
 
 module.exports = router;
