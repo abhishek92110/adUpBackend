@@ -34,7 +34,7 @@ const loginUser = async (req, res) => {
 // signUp user
 
 const signupUser = async (req, res) => {
-  const { email, password, location } = req.body;
+  const { email, name, business, phone } = req.body;
 
   try {
     // Check if user already exists
@@ -46,8 +46,9 @@ const signupUser = async (req, res) => {
     // Create a new user
     const user = new User({
       email,
-      password,
-      location
+      name,
+      business,
+      phone
     });
 
     // Save user to database
@@ -61,6 +62,38 @@ const signupUser = async (req, res) => {
     res.status(201).json({ token });
   }
    catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+};
+
+// update location in user
+const updateUserLocation = async (req, res) => {
+  const { email, location } = req.body;
+
+  try {
+    // Check if user exists (optional, but recommended)
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Update the user's location
+    const result = await User.updateOne(
+      { email },
+      { $set: { location } }
+    );
+
+    if (result.nModified === 0) {
+      return res.status(400).json({ message: 'No changes made' });
+    }
+
+    // Generate a token if necessary (make sure this logic is here)
+   
+
+    res.status(200).json({ "status":"true" }); // return token or success message
+  } catch (err) {
     console.error(err);
     res.status(500).send('Server Error');
   }
@@ -131,4 +164,4 @@ const googleLogin = async (req, res) => {
 };
 
 
-module.exports = { loginUser, signupUser, googleLogin  };
+module.exports = { loginUser, signupUser, googleLogin, updateUserLocation  };
