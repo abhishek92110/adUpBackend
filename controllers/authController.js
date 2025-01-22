@@ -4,8 +4,8 @@ const admin = require('../config/firebase');
 const twilio = require('twilio');
 
 
-const accountSid = 'AC2a7fb103cffd326a2039188b5d62f9a1'; // Replace with your Twilio SID
-const authToken = 'dc86cb5188f4f4721a435762338a9e1a'; // Replace with your Twilio Auth Token
+const accountSid = process.env.ACCOUNT_SID; // Replace with your Twilio SID
+const authToken =  process.env.AUTH_TOKEN; // Replace with your Twilio Auth Token
 const client = twilio(accountSid, authToken);
 
 // route to otp verification
