@@ -1,6 +1,47 @@
 const User = require('../model/user');
 const jwt = require('jsonwebtoken');
 const admin = require('../config/firebase');
+const twilio = require('twilio');
+
+
+const accountSid = 'AC2a7fb103cffd326a2039188b5d62f9a1'; // Replace with your Twilio SID
+const authToken = 'dc86cb5188f4f4721a435762338a9e1a'; // Replace with your Twilio Auth Token
+const client = twilio(accountSid, authToken);
+
+// route to otp verification
+
+const sendOtp = (req, res) => {
+  const { phoneNumber } = req.body;
+  
+  // Twilio sender phone number (replace with your own Twilio phone number)
+  const senderNumber = '+15076783933';  // Replace with your Twilio phone number
+
+  client.verify.services('VAb3d86a0cc4362e6b0f71a47064ecdc71')
+    .verifications.create({
+      to: `+91${phoneNumber}`,
+      from: senderNumber,  // Specify the sender number
+      channel: 'sms'
+    })
+    .then((verification) => res.json({ success: true, verification }))
+    .catch((error) => res.json({ success: false, error: error.message }));
+};
+
+const verifyOtp =  (req, res) => {
+  const { phoneNumber, otp } = req.body;
+
+  client.verify.services('YOUR_VERIFICATION_SERVICE_SID')
+    .verificationChecks.create({ to: `+91${phoneNumber}`, code: otp })
+    .then((verification_check) => {
+      if (verification_check.status === 'approved') {
+        res.json({ success: true });
+      } else {
+        res.json({ success: false, error: 'Invalid OTP' });
+      }
+    })
+    .catch((error) => res.json({ success: false, error: error.message }));
+};
+
+// end route to otp verification
 
 // Login User
 const loginUser = async (req, res) => {
@@ -164,4 +205,4 @@ const googleLogin = async (req, res) => {
 };
 
 
-module.exports = { loginUser, signupUser, googleLogin, updateUserLocation  };
+module.exports = { loginUser, signupUser, googleLogin, updateUserLocation, verifyOtp, sendOtp  };
