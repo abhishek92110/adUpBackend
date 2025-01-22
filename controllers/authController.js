@@ -35,6 +35,7 @@ const loginUser = async (req, res) => {
 
 const signupUser = async (req, res) => {
   const { email, name, business, phone } = req.body;
+  console.log("body data", req.body, email, name, business, phone)
 
   try {
     // Check if user already exists
